@@ -12,7 +12,7 @@ const Question = ({ border, data, isQuestion }) => {
   const [commentBody, setCommentBody] = useState("");
   const [commentsData, setCommentsData] = useState([]);
   const [contentState, setContentState] = useState(data.content);
-  const [voteState, setVoteState] = useState(data.vote);
+  const [voteState, setVoteState] = useState(data.voteCnt);
   const [acceptedState, setAcceptedState] = useState(data.accepted);
 
   const handleContentUpdate = (updatedContent) => {
@@ -73,11 +73,7 @@ const Question = ({ border, data, isQuestion }) => {
     if (postCommentData.content === "") {
       alert("최소 한 글자이상을 작성해주세요.");
     } else {
-      postRequest(
-        "https://032b9d6f-98f0-429c-ae1e-76363c379d20.mock.pstmn.io/",
-        postCommentData,
-        headers
-      );
+      postRequest("http://138.2.62.18:8080/comments", postCommentData, headers);
       setCommentsData([...commentsData, postCommentData]);
     }
   };

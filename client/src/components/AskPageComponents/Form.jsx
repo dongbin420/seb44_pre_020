@@ -41,16 +41,13 @@ const Form = () => {
     const createQuestionData = {
       title: questionTitle,
       content: questionBody,
-      userId: 2,
+      userId: 1,
     };
 
     if (createQuestionData.title === "" || createQuestionData.content === "") {
       alert("Title과 Body는 최소 한 글자 이상 작성해주세요.");
     } else {
-      postRequest(
-        "https://17b4-180-230-182-235.ngrok-free.app/questions",
-        createQuestionData
-      );
+      postRequest("http://138.2.62.18:8080/questions", createQuestionData);
       navigate("/");
     }
   };

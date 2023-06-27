@@ -28,7 +28,7 @@ const QuestionsPage = () => {
         };
 
         const questionRes = await getRequest(
-          `https://17b4-180-230-182-235.ngrok-free.app/questions/1`,
+          `http://138.2.62.18:8080/questions/1`,
           headers
         ); // questionId 이용해서, get 요청 보내기
 
@@ -39,14 +39,14 @@ const QuestionsPage = () => {
         //   (q) => q.id === +questionId
         // );
 
-        // setQuestionData(question);
+        setQuestionData(questionRes.data);
 
         // 답변부분 따로 요청보내기(답변이 질문과 함께 들어오면 이부분 지우고 질문 요청 수정 필요)
         // const answerRes = await getRequest("/mockupdata/answers.json"); // questionId 이용해서, get 요청 보내기
         // const answer = answerRes.answers.filter(
         //   (a) => a["question_id"] === +questionId
         // );
-        // setAnswersData(answer);
+        setAnswersData(questionRes.data.answerList);
       } catch (err) {
         console.error("Error:", err);
       }
@@ -71,7 +71,7 @@ const QuestionsPage = () => {
     if (newAnswerData.content === "") {
       alert("최소 한 글자이상을 작성해주세요.");
     } else {
-      postRequest("https://localhost:8080/answers", newAnswerData);
+      postRequest("http://138.2.62.18:8080/answers", newAnswerData);
       setAnswersData([...answersData, newAnswerData]);
     }
   };
@@ -86,7 +86,7 @@ const QuestionsPage = () => {
           <Title
             title={questionData.title}
             date={questionData.date}
-            views={questionData.views}
+            views={questionData.viewCount}
           />
           <div className="flex">
             <div className="flex-1 shrink-0">

@@ -25,7 +25,7 @@ const Edit = ({
       alert("최소 한 글자이상을 작성해주세요.");
     } else {
       patchRequest(
-        `https://47de-180-230-182-235.ngrok-free.app/answers/${id}`, // id로 변경할 데이터 명시하기 ${id}
+        `http://138.2.62.18:8080/answers/${id}`, // id로 변경할 데이터 명시하기 ${id}
         newEditedData
       );
       setIsEditOpen(!isEditOpen);

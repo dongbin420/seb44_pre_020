@@ -29,7 +29,7 @@ const Content = ({
 
   const handleDeleteClick = () => {
     deleteRequest(
-      `https://7824fe4c-db17-4a35-8a83-3480e0f32f69.mock.pstmn.io/${id}` // id로 지울 데이터 명시하기 // 질문이면 둘다, 답변이면 답변만 지우기
+      `http://138.2.62.18:8080/delete/${id}` // id로 지울 데이터 명시하기 // 질문이면 둘다, 답변이면 답변만 지우기
     );
 
     if (isQuestion) {

@@ -41,7 +41,7 @@ function SignupForm() {
 
     /*     const url = `${BASE_URL}/v1/sign-up`; */
     await axios
-      .post("https://17b4-180-230-182-235.ngrok-free.app/users/signup", {
+      .post("http://138.2.62.18:8080/users/signup", {
         username,
         email,
         password,
