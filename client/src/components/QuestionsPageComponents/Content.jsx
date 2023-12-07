@@ -100,7 +100,7 @@ const Content = ({
                 {author}
                 {/* (ex Dongbin Yoo) */}
               </p>
-              <span className="text-sm text-gray-500 font-bold">(ex 13)</span>
+              <span className="text-sm text-gray-500 font-bold">13</span>
             </div>
           </div>
         </div>
