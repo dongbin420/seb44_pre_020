@@ -59,6 +59,7 @@ const Question = ({ border, data, isQuestion }) => {
 
     const postCommentData = {
       // id: 0,
+      id: Math.floor(Math.random() * 100000) + 1,
       content: commentBody,
       author: "",
       // date: `${year}-${formattedMonth}-${formattedDay}`,
