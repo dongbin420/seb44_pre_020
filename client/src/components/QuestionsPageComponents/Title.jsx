@@ -1,4 +1,8 @@
+import { useNavigate } from "react-router-dom";
+
 const Title = ({ title, date, views }) => {
+  const navigate = useNavigate();
+
   return (
     <>
       <div className="flex justify-between mb-2">
@@ -6,7 +10,7 @@ const Title = ({ title, date, views }) => {
           {/* (ex Why Javascript is so weird?) */}
           {title}
         </h2>
-        <button className="bg-sky-500 hover:bg-sky-600 p-2.5 rounded text-white text-sm">
+        <button onClick={() => navigate(`/ask`)} className="bg-sky-500 hover:bg-sky-600 p-2.5 rounded text-white text-sm">
           Ask Question
         </button>
       </div>
