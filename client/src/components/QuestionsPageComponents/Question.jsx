@@ -102,7 +102,7 @@ const Question = ({ border, data, isQuestion }) => {
       />
       <div></div>
       <div className="mt-3 pr-4">
-        {commentsData.map((comment, index) => {
+        {commentsData !== 0 ? commentsData.map((comment, index) => {
           return (
             <Comment
               key={index}
@@ -111,7 +111,7 @@ const Question = ({ border, data, isQuestion }) => {
               commentsData={commentsData}
             />
           );
-        })}
+        }) : null}
         {/* <Comment /> */}
         <button
           onClick={handleCommentCreateClick}

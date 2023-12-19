@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { patchRequest, deleteRequest } from "../../api/api";
 import { formattedMonth, year, formattedDay } from "../../assets/strings/date";
 import { commentsDataState } from "../../Atoms/atoms";
@@ -8,6 +8,10 @@ const Comment = ({ data, setCommentsData, commentsData }) => {
   const [commentEditOpen, setCommentEditOpen] = useState(false);
   const [comment, setComment] = useState(data);
   const [editedCommentBody, setEditedCommentBody] = useState(data.content); // 초기 값은 이전 comment body data
+
+  useEffect(() => {
+    setComment(data);
+  }, [data]);
 
   const handleCommentDeleteClick = () => {
     setCommentsData(
