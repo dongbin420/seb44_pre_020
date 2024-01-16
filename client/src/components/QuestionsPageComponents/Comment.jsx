@@ -11,6 +11,7 @@ const Comment = ({ data, setCommentsData, commentsData }) => {
 
   useEffect(() => {
     setComment(data);
+    setEditedCommentBody(data.content);
   }, [data]);
 
   const handleCommentDeleteClick = () => {
